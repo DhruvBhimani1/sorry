@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I'm Sorry 💔</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #fce7f3, #fbcfe8);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #f472b6;
+      transform: rotate(45deg);
+      animation: float 6s infinite ease-in-out;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #f472b6;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-800px) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-center items-center relative overflow-hidden text-center px-6">
+
+  <!-- Floating hearts -->
+  <div class="heart" style="left: 10%; animation-delay: 0s;"></div>
+  <div class="heart" style="left: 30%; animation-delay: 1s;"></div>
+  <div class="heart" style="left: 50%; animation-delay: 2s;"></div>
+  <div class="heart" style="left: 70%; animation-delay: 3s;"></div>
+  <div class="heart" style="left: 90%; animation-delay: 4s;"></div>
+
+  <!-- Content -->
+  <h1 class="text-4xl sm:text-5xl font-bold text-pink-700 mb-4 animate-pulse">I'm Sorry, My Love 😔</h1>
+  <p class="text-lg sm:text-xl text-pink-600 max-w-xl mb-8">
+    I know I made a mistake, and I'm truly sorry from the bottom of my heart. <br />
+    Hurting you is the last thing I’d ever want. <br />
+    Please give me one more chance to make it right. 💞
+  </p>
+
+  <a href="index.html" class="px-6 py-3 bg-pink-600 text-white font-semibold rounded-full shadow-md hover:bg-pink-700 transition duration-300">
+    Forgive Me?
+  </a>
+</body>
+</html>
