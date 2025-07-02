@@ -50,6 +50,11 @@
         opacity: 0;
       }
     }
+
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 20px #f472b6; }
+      50% { box-shadow: 0 0 40px #f472b6; }
+    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col justify-center items-center relative overflow-hidden text-center px-6">
@@ -61,16 +66,47 @@
   <div class="heart" style="left: 70%; animation-delay: 3s;"></div>
   <div class="heart" style="left: 90%; animation-delay: 4s;"></div>
 
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+  </audio>
+
   <!-- Content -->
   <h1 class="text-4xl sm:text-5xl font-bold text-pink-700 mb-4 animate-pulse">I'm Sorry, My Love 😔</h1>
   <p class="text-lg sm:text-xl text-pink-600 max-w-xl mb-8">
     I know I made a mistake, and I'm truly sorry from the bottom of my heart. <br />
     Hurting you is the last thing I’d ever want. <br />
+    You mean the world to me, and I promise to always cherish your heart. 💖<br />
     Please give me one more chance to make it right. 💞
   </p>
 
-  <h1  class="px-6 py-3 bg-pink-600 text-white font-semibold rounded-full shadow-md hover:bg-pink-700 transition duration-300">
-    Forgive Me?
-  </h1>
+  <button onclick="showSurprise()" class="px-8 py-4 bg-pink-600 text-white font-semibold rounded-full shadow-lg hover:bg-pink-700 transition duration-300 animate-bounce">
+    Forgive Me, My Love 💌
+  </button>
+
+  <!-- Surprise Message Modal -->
+  <div id="surpriseModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm text-pink-700 text-center">
+      <h2 class="text-2xl font-bold mb-4">Thank You 💖</h2>
+      <p>You just made my heart smile again. I love you endlessly, and I’ll never stop proving it. 💫</p>
+      <button onclick="closeSurprise()" class="mt-6 px-4 py-2 bg-pink-600 text-white rounded hover:bg-pink-700 transition">Close</button>
+    </div>
+  </div>
+
+  <!-- Animated floating message -->
+  <div class="absolute bottom-6 text-pink-500 italic animate-pulse text-sm">
+    Because forever means nothing without you...
+  </div>
+
+  <script>
+    function showSurprise() {
+      document.getElementById('surpriseModal').classList.remove('hidden');
+    }
+
+    function closeSurprise() {
+      document.getElementById('surpriseModal').classList.add('hidden');
+    }
+  </script>
+
 </body>
 </html>
